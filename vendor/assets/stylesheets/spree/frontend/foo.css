@@ -1,0 +1,68 @@
+#spree-header {
+  background: white center center;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+
+#spree-header .nav a {
+  color: black;
+}
+
+#spree-header #header {
+  background: white;
+  padding: 20px 0
+  ;
+}
+
+#spree-header #header {
+  background: white;
+  padding: 20px 0
+  ;
+}
+
+
+.navbar{
+  display: none
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 500px) {
+
+a.cart-info.empty{
+  position: relative;
+  right:20px;
+
+}
+
+
+
+
+#spree-header #main-nav-bar {
+  border: 0;
+  margin-bottom: 0;
+  background-color: #E6E6E6;
+  border-top :1px  solid;
+  border-bottom :1px solid;
+}
+
+}
+
+
+
+#sidebar_products_search .navigation{
+	display: none;
+}
+#sidebar_products_search .btn{
+	display: none;
+}
+

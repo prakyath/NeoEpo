@@ -47,3 +47,6 @@ end
 gem 'spree', '3.0.1'
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise',branch: '3-0-stable'
+
+gem 'spree_request', :path => 'spree_request'
+gem 'spree_contact_us', :git => 'https://github.com/jdutil/spree_contact_us',branch: '3-0-stable'

@@ -9,3 +9,5 @@
 //= require spree/frontend
 
 //= require_tree .
+//= require spree/frontend/spree_request
+//= require spree/frontend/spree_contact_us

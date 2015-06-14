@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528153256) do
+ActiveRecord::Schema.define(version: 20150614171512) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20150528153256) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "requests", force: :cascade do |t|
+    t.string  "subject",     limit: 255
+    t.text    "description", limit: 65535
+    t.string  "email",       limit: 255
+    t.integer "phonenumber", limit: 4
+  end
 
   create_table "spree_addresses", force: :cascade do |t|
     t.string   "firstname",         limit: 255
@@ -694,6 +701,17 @@ ActiveRecord::Schema.define(version: 20150528153256) do
   add_index "spree_shipping_rates", ["shipment_id", "shipping_method_id"], name: "spree_shipping_rates_join_index", unique: true, using: :btree
   add_index "spree_shipping_rates", ["tax_rate_id"], name: "index_spree_shipping_rates_on_tax_rate_id", using: :btree
 
+  create_table "spree_skrill_transactions", force: :cascade do |t|
+    t.string   "email",          limit: 255
+    t.float    "amount",         limit: 24
+    t.string   "currency",       limit: 255
+    t.integer  "transaction_id", limit: 4
+    t.integer  "customer_id",    limit: 4
+    t.string   "payment_type",   limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spree_state_changes", force: :cascade do |t|
     t.string   "name",           limit: 255
     t.string   "previous_state", limit: 255
@@ -914,15 +932,19 @@ ActiveRecord::Schema.define(version: 20150528153256) do
     t.string   "authentication_token",   limit: 255
     t.string   "unlock_token",           limit: 255
     t.datetime "locked_at"
-    t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.string   "spree_api_key",          limit: 48
     t.datetime "deleted_at"
+    t.datetime "remember_created_at"
+    t.string   "confirmation_token",     limit: 255
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
   add_index "spree_users", ["deleted_at"], name: "index_spree_users_on_deleted_at", using: :btree
+  add_index "spree_users", ["email"], name: "email_idx_unique", unique: true, using: :btree
   add_index "spree_users", ["spree_api_key"], name: "index_spree_users_on_spree_api_key", using: :btree
 
   create_table "spree_variants", force: :cascade do |t|
