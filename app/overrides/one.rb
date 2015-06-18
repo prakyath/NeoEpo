@@ -1,6 +1,18 @@
   Deface::Override.new(:virtual_path =>"spree/shared/_products",
                      :name =>"edit1",
-                     :replace =>"[data-hook='products_search_results_heading_no_results_found']",
-                    :text=>"<h3><%= link_to 'Ask for Details', contact_us_url %></h3>", 
-                       )
+                     :remove =>"[data-hook='products_search_results_heading_no_results_found']"
+                         )
 
+
+
+ Deface::Override.new(:virtual_path =>"spree/taxons/show",
+                     :name =>"edit2",
+                     :replace =>"[data-hook='taxon_products']",
+                     :partial =>"spree/main" 
+                       )                          
+
+Deface::Override.new(:virtual_path =>"spree/home/index",
+                     :name =>"edit2",
+                     :replace =>"[data-hook='homepage_products']",
+                     :partial =>"spree/home" 
+                       )   

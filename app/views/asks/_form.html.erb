@@ -1,0 +1,42 @@
+<%= form_for @ask  do |f| %>
+  <% if @ask.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ask.errors.count, "error") %> prohibited this ask from being saved:</h2>
+
+      <ul>
+      <% @ask.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<form>
+  <div class="form-group">
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject ,class:"form-control" %>
+  </div>
+  </div>
+  <div class="form-group">
+  <div class="field">
+    <%= f.label :message %><br>
+    <%= f.text_area :message,class:"form-control",rows: 5 %>
+  </div>
+  </div>
+  <div class="form-group">
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email,class:"form-control" %>
+  </div>
+  </div>
+  <div class="form-group">
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.number_field :phone,class:"form-control" %>
+  </div>
+  </div>
+  <div class="actions" >
+    <%= f.submit 'send', :class=>'btn btn-primary'  %>
+  </div>
+  </form>
+<% end %>
