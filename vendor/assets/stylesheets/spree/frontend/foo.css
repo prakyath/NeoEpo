@@ -73,3 +73,6 @@ a.cart-info.empty{
      padding: 2px !important;
  }
 
+.breadcrumb{
+  display: none;
+}
