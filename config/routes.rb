@@ -8,5 +8,5 @@ Spree::Core::Engine.routes.draw do
    resources :asks
 end
 
-
+get '*id', :to => 'spree/taxons#show', :as => :categories
 end

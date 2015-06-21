@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: NeoEpo_production
-  username: NeoEpo
+  username: root
   password: <%= ENV['NEOEPO_DATABASE_PASSWORD'] %>
