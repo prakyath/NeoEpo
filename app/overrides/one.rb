@@ -22,3 +22,5 @@ Deface::Override.new(:virtual_path =>"spree/shared/head",
                      :replace =>"title",
                      :text =>"neoepo" 
                        )   
+ 
+                       
