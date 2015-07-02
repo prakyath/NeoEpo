@@ -16,3 +16,9 @@ Deface::Override.new(:virtual_path =>"spree/home/index",
                      :replace =>"[data-hook='homepage_products']",
                      :partial =>"spree/home" 
                        )   
+
+Deface::Override.new(:virtual_path =>"spree/shared/head",
+                     :name =>"edit3",
+                     :replace =>"title",
+                     :text =>"neoepo" 
+                       )   

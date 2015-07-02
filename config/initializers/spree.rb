@@ -1,6 +1,7 @@
 
 Spree.config do |config|
-   config.logo = 'logo/NeoEpo-LogoText.png'
+	 config.admin_interface_logo = 'logo/NeoEpo.png'
+   config.logo = 'logo/NeoEpo.png'
 
 end
 

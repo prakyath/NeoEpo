@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 20150618155808) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
     t.integer  "sluggable_id",   limit: 4,   null: false
@@ -36,10 +42,12 @@ ActiveRecord::Schema.define(version: 20150618155808) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "requests", force: :cascade do |t|
-    t.string  "subject",     limit: 255
-    t.text    "description", limit: 65535
-    t.string  "email",       limit: 255
-    t.integer "phonenumber", limit: 4
+    t.string   "subject",     limit: 255
+    t.text     "message",     limit: 65535
+    t.string   "email",       limit: 255
+    t.integer  "phonenumber", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "spree_addresses", force: :cascade do |t|
